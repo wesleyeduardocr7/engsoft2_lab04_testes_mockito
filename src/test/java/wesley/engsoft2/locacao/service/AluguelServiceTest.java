@@ -1,4 +1,5 @@
 package wesley.engsoft2.locacao.service;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -120,5 +121,27 @@ public class AluguelServiceTest {
         Mockito.verify(emailService, times(1)).notifica(cliente3);
 
         verifyNoMoreInteractions(emailService);
+    }
+
+    @Test
+    public void deveLancarUmaExcecaoSeOValorPagoForMenorQueOValorDoAluguel(){
+
+        Aluguel aluguel = AluguelBuilder.umAluguel().comDataDeVencimento(LocalDate.of(2020, 11, 30)).comDataDePagamento(LocalDate.of(2020, 11, 30)).constroi();
+
+        aluguel.getLocacao().setValorAluguel(new BigDecimal(2000));
+
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> aluguel.setValorPago(new BigDecimal(1800)),
+                "Valor pago deve ser no mímimo igual ao valor do Aluguel");
+    }
+
+    @Test
+    public void deveRetornarValorSemAcrescimoDeMultas(){
+
+        Aluguel aluguel = AluguelBuilder.umAluguel().comDataDeVencimento(LocalDate.of(2020, 11, 20)).comDataDePagamento(LocalDate.of(2020, 11, 15)).constroi();
+
+        aluguel.getLocacao().setValorAluguel(new BigDecimal(2000));
+
+        Assertions.assertEquals(aluguel.getLocacao().getValorAluguel(), aluguel.getValorASerPago());
     }
 }

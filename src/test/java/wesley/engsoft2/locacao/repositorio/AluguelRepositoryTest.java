@@ -143,27 +143,4 @@ public class AluguelRepositoryTest {
 		Assertions.assertEquals(1, listaDeAlugueisPagos.count());
 	}
 
-	@Test
-	public void deveLancarUmaExcecaoSeOValorPagoForMenorQueOValorDoAluguel(){
-
-		Aluguel aluguel = AluguelBuilder.umAluguel().comDataDeVencimento(LocalDate.of(2020, 11, 30)).comDataDePagamento(LocalDate.of(2020, 11, 30)).constroi();
-
-		aluguel.getLocacao().setValorAluguel(new BigDecimal(2000));
-
-		Assertions.assertThrows(IllegalArgumentException.class,
-				() -> aluguel.setValorPago(new BigDecimal(1800)),
-				"Valor pago deve ser no mímimo igual ao valor do Aluguel");
-
-	}
-
-	@Test
-	public void deveRetornarValorSemAcrescimoDeMultas(){
-
-		Aluguel aluguel = AluguelBuilder.umAluguel().comDataDeVencimento(LocalDate.of(2020, 11, 20)).comDataDePagamento(LocalDate.of(2020, 11, 15)).constroi();
-
-		aluguel.getLocacao().setValorAluguel(new BigDecimal(2000));
-
-		Assertions.assertEquals(aluguel.getLocacao().getValorAluguel(), aluguel.getValorASerPago());
-	}
-
 }
