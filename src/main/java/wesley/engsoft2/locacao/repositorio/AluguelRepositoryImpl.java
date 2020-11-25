@@ -43,6 +43,12 @@ public class AluguelRepositoryImpl implements AluguelRepository {
 	}
 
 	@Override
+	public List<Aluguel> recuperarAlugueisPagosEmAtraso() {
+		return manager.createQuery("SELECT a FROM Aluguel a WHERE a.dataPagamento > a.dataVencimento ", Aluguel.class)
+				.getResultList();
+	}
+
+	@Override
 	public void salva(Aluguel aluguel) {
 		manager.persist(aluguel);
 	}

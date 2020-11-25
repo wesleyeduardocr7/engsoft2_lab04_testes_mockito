@@ -45,6 +45,11 @@ public class AluguelBuilder {
 		return this;
 	}
 
+	public AluguelBuilder comLocacao(Locacao locacao){
+		aluguel.setLocacao(locacao);
+		return this;
+	}
+
 	public Aluguel constroi(){
 		return aluguel;
 	}

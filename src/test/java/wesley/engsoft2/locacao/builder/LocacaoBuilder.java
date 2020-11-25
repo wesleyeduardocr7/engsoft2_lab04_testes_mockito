@@ -49,6 +49,11 @@ public class LocacaoBuilder {
 		return this;
 	}
 
+	public LocacaoBuilder paraUmCliente(Cliente cliente) {
+		locacao.setCliente(cliente);
+		return this;
+	}
+
 	public Locacao constroi(){
 		return locacao;
 	}
