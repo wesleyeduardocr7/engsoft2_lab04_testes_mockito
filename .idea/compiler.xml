@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="engsoft2_lab04_testes_mockito" />
+        <module name="laboratorio_04_engsoft2_testes_mock" />
       </profile>
     </annotationProcessing>
   </component>
