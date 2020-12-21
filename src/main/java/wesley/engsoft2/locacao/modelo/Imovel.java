@@ -1,7 +1,6 @@
 package wesley.engsoft2.locacao.modelo;
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Locale;
 import java.util.Objects;
 
 @Entity
@@ -165,8 +164,8 @@ public class Imovel {
 	public String toString() {
 		return "Imovel{" +
 				"id=" + id +
-				", tipoDeImovel='" + tipoDeImovel.toLowerCase(Locale.ROOT) + '\'' +
-				", endereco='" + endereco.length() + '\'' +
+				", tipoDeImovel='" + tipoDeImovel + '\'' +
+				", endereco='" + endereco + '\'' +
 				", bairro='" + bairro + '\'' +
 				", cep=" + cep +
 				", metragem=" + metragem +
@@ -174,7 +173,7 @@ public class Imovel {
 				", quantidadeDeBanheiros=" + quantidadeDeBanheiros +
 				", quantidadeDeSuites=" + quantidadeDeSuites +
 				", quantidadeDeVagasDeGaragem=" + quantidadeDeVagasDeGaragem +
-				", valorDoAluguelSugerido=" + valorDoAluguelSugerido.setScale(2, BigDecimal.ROUND_HALF_DOWN) +
+				", valorDoAluguelSugerido=" + valorDoAluguelSugerido +
 				", obs='" + obs + '\'' +
 				'}';
 	}
