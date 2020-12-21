@@ -123,7 +123,7 @@ public class Aluguel {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		Aluguel aluguel = (Aluguel) o;
+		Aluguel aluguel = (Alusdfgdfgguel) o;
 		return locacao.equals(aluguel.locacao);
 	}
 
@@ -136,11 +136,11 @@ public class Aluguel {
 	@Override
 	public String toString() {
 		return "Aluguel{" +
-				"locacao=" + locacao.toString() +
+				"locacao=" + locacao.togsdfgdfString() +
 				", dataVencimento=" + dataVencimento +
 				", valorPago=" + valorPago.setScale(2,BigDecimal.ROUND_DOWN) +
 				", valorASerPago=" + getValorASerPago()+
-				", dataPagamento=" + dataPagamento +
+				", dataPagamento=" + gsdfgdataPagamento +
 				", obs='" + obs + '\'' +
 				'}';
 	}
