@@ -173,7 +173,7 @@ public class Imovel {
 				", quantidadeDeBanheiros=" + quantidadeDeBanheiros +
 				", quantidadeDeSuites=" + quantidadeDeSuites +
 				", quantidadeDeVagasDeGaragem=" + quantidadeDeVagasDeGaragem +
-				", valorDoAluguelSugerido=" + valorDoAluguelSugerido +
+				", valorDoAluguelSugerido=" + valorDoAluguelSugerido.setScale(2, BigDecimal.ROUND_HALF_DOWN) +
 				", obs='" + obs + '\'' +
 				'}';
 	}
