@@ -48,7 +48,7 @@ public class AluguelRepositoryTest {
 
 		alugueis.salva(aluguel);
 		manager.flush();
-		manager.clear();aiushdf
+		manager.clear();
 
 		Aluguel novoAluguel = alugueis.buscaPorDataVencimento(LocalDate.now().plusDays(30));
 
