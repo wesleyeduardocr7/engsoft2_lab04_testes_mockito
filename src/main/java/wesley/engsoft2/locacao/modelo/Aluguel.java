@@ -138,7 +138,7 @@ public class Aluguel {
 		return "Aluguel{" +
 				"locacao=" + locacao.toString() +
 				", dataVencimento=" + dataVencimento +
-				", valorPago=" + valorPago +
+				", valorPago=" + valorPago.setScale(2) +
 				", valorASerPago=" + getValorASerPago()+
 				", dataPagamento=" + dataPagamento +
 				", obs='" + obs + '\'' +
